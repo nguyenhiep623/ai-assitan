@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Trợ lý phát triển</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div class="drag" aria-hidden="true"></div>
+
+<div class="app" id="app">
+  <section class="stage" id="stage" aria-label="Trợ lý phát triển">
+    <div class="hud"><span class="wm">Trợ lý phát triển</span><span class="live"><span class="dot"></span><span id="status">Online</span></span></div>
+    <div class="bubble" id="bubble">What would you like to improve today?</div>
+    <div class="char" id="char" role="img" aria-label="Quả cầu hạt">
+      <div class="float"><div class="lean" id="lean"><div class="act">
+        <canvas id="sphere" aria-hidden="true"></canvas><canvas id="sphereGlow" aria-hidden="true"></canvas>
+      </div></div></div>
+    </div>
+  </section>
+
+  <div class="dock" id="dock">
+    <form id="form" class="composer glass">
+      <textarea id="input" rows="1" placeholder="What would you like to improve today?" aria-label="Tin nhắn"></textarea>
+      <button class="send" id="send" type="submit" aria-label="Gửi"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </form>
+    <div class="palette glass" id="palette" role="listbox" aria-label="Lệnh hiệu ứng"></div>
+  </div>
+
+  <aside class="reply glass" id="reply" aria-label="Phản hồi">
+    <header>
+      <span class="lbl">Phản hồi</span>
+      <div class="tools">
+        <div class="seg" role="group" aria-label="Chế độ trả lời" hidden>
+          <button type="button" id="tierQuick" aria-pressed="true">Nhanh</button>
+          <button type="button" id="tierDeep" aria-pressed="false">Kỹ</button>
+        </div>
+        <button type="button" class="tbtn" id="voiceBtn" aria-pressed="false">Giọng nói</button>
+        <button type="button" class="tbtn" id="clearBtn">Xóa</button>
+      </div>
+    </header>
+    <div class="log" id="log" aria-live="polite"></div>
+    <div class="chips" id="chips">
+      <button type="button">Đặt mục tiêu cho quý này</button>
+      <button type="button">Lập kế hoạch học 30 ngày</button>
+      <button type="button">Phản biện ý tưởng của tôi</button>
+      <button type="button">Tổng kết tuần và chọn bước tiếp theo</button>
+    </div>
+    <div class="note" id="note" hidden></div>
+    <div class="note tok" id="tok" hidden></div>
+  </aside>
+</div>
+<script src="bridge.js"></script>
+<script src="app.js"></script>
+</body></html>

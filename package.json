@@ -1,0 +1,22 @@
+{
+  "name": "tro-ly-phat-trien",
+  "productName": "Trợ lý phát triển",
+  "version": "1.0.0",
+  "description": "Trợ lý phát triển cá nhân với quả cầu hạt tương tác, chạy bằng Claude Code CLI trên máy.",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac --dir"
+  },
+  "devDependencies": {
+    "electron": "^44.7.2",
+    "electron-builder": "^26.15.3"
+  },
+  "build": {
+    "appId": "local.tro-ly-phat-trien",
+    "productName": "Trợ lý phát triển",
+    "files": ["main.js", "preload.js", "renderer/**/*"],
+    "mac": { "target": "dmg", "category": "public.app-category.productivity", "identity": null }
+  }
+}
